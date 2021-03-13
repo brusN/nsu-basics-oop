@@ -1,0 +1,75 @@
+//---------Правильные схемы---------//
+// 1
+desc
+3 = sort
+csed
+3
+
+// 2
+desc
+1 = readfile in.txt
+3 = sort
+csed
+1 -> 3
+
+// 3
+desc
+1 = readfile in.txt
+3 = sort
+2 = writefile out.txt
+csed
+1 -> 3 -> 2
+
+// 4
+desc
+3 = sort
+2 = writefile out.txt
+csed
+3 -> 2
+
+// 5
+desc
+3 = sort
+4 = dump
+1 = readfile in.txt
+csed
+1 -> 3 -> 4
+
+//---------Схемы с ошибками---------//
+
+// 1
+desc
+1 = readfile in.txt
+2 = sort
+csed
+2 -> 1
+
+// 2
+desc
+3 = writefile out.txt
+2 = readfile in.txt
+csed
+3 -> 2
+
+// 3
+desc
+3 = writefile out.txt
+2 = readfile in.txt
+1 = sort
+csed
+1 ->
+
+// 4
+desc
+3 = writefile out.txt
+2 = readfile in.xt
+csed
+2 -> 3
+
+// 5
+desc
+3 = sort
+2 = readfile in.txt
+1 = writefile out.txt
+csed
+3 -> 2 -> 1
